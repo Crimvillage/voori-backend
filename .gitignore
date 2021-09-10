@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+src/libs/config/config.dev.private.js
+src/libs/config/config.live.private.js
+src/libs/config/default/config.default.private.js
+src/config/config.dev.private.js
+src/config/config.live.private.js
+src/config/default/config.default.private.js
+src/config/keys/crypto.js
+src/config/keys/jwt.js
+.gitignore
