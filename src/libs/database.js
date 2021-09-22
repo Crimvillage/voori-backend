@@ -1,13 +1,14 @@
 const Sequelize = require('sequelize');
-var cfg = require('../config')
+var cfg = require('../config');
 
-const { encrypt, decrypt } = require('./crypto');
+const {decrypt} = require('./crypto');
 // initialize an instance of Sequelize
 
 var sequelize = new Sequelize(decrypt(cfg.private.db.name), decrypt(cfg.private.db.user), decrypt(cfg.private.db.pass), {
     host: decrypt(cfg.private.db.host),
     dialect: 'mariadb'/* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
-  });
+  })
+
 // check the databse connection
 sequelize
   .authenticate()
@@ -15,7 +16,7 @@ sequelize
   .catch(err => console.error('Unable to connect to the database:', err));
 
 //Load models
-//var models = require('../models')
+var models = require('../models')
 
 
 
